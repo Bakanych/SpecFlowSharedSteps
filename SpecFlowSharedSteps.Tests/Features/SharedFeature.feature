@@ -1,5 +1,5 @@
 ﻿@testdata
-Feature: Shared Feature
+Feature: [Shared] Feature!
 Background: 
 
 Scenario: Shared steps 1

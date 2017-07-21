@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using TechTalk.SpecFlow;
-
+using TechTalk.SpecFlow.Tracing;
 
 namespace SpecFlowSharedSteps
 {
@@ -62,7 +62,7 @@ namespace SpecFlowSharedSteps
         {
             // Get type of shared feature class
             var featureType = stepAssemblies.SelectMany(x => x.GetTypes()
-                        .Where(type => type.Name.ToLower() == $"{Trim(feature)}feature"))
+                        .Where(type => type.Name.ToLower() == $"{ConvertToIdentifier(feature)}feature"))
                         .FirstOrDefault();
 
 
@@ -71,7 +71,7 @@ namespace SpecFlowSharedSteps
 
             // Get scenario method from feature class
             var scenarioMethod = featureType.GetMethods()
-                .FirstOrDefault(x => x.Name.ToLower() == (Trim(scenario)));
+                .FirstOrDefault(x => x.Name.ToLower() == (ConvertToIdentifier(scenario)));
             if (scenarioMethod == null)
                 throw new ArgumentException($"Cannot find scenario with name '{scenario}'");
 
@@ -94,12 +94,12 @@ namespace SpecFlowSharedSteps
             }
         }
 
-        private string Trim(string name)
+        private string ConvertToIdentifier(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentNullException(name);
 
-            return name.Replace(" ", string.Empty).ToLower();
+            return name.ToIdentifier().ToLower();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace SpecFlowSharedSteps.Tests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Shared Feature", new string[] {
+    [TechTalk.SpecRun.FeatureAttribute("[Shared] Feature!", new string[] {
             "testdata"}, SourceFile="Features\\SharedFeature.feature", SourceLine=1)]
     public partial class SharedFeatureFeature
     {
@@ -31,7 +31,7 @@ namespace SpecFlowSharedSteps.Tests.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Shared Feature", null, ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "[Shared] Feature!", null, ProgrammingLanguage.CSharp, new string[] {
                         "testdata"});
             testRunner.OnFeatureStart(featureInfo);
         }

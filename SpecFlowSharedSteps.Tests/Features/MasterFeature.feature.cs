@@ -78,9 +78,9 @@ this.FeatureBackground();
 #line 5
  testRunner.Given("Save 1 to scenario context master1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.Given("I execute the steps of \'Shared Feature\'.\'Shared Steps 1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I execute the steps of \'[Shared] Feature!\'.\'Shared Steps 1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.And("I execute the steps of \'Shared Feature\'.\'Shared Steps 2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I execute the steps of \'[Shared] Feature!\'.\'Shared Steps 2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
  testRunner.Then("Read master1 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 11
@@ -114,9 +114,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 2
 this.FeatureBackground();
 #line 19
- testRunner.Given("I execute background steps of \'Shared Feature\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I execute background steps of \'[Shared] Feature!\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 20
- testRunner.And("I execute the steps of \'Shared Feature\'.\'Shared Steps 1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I execute the steps of \'[Shared] Feature!\'.\'Shared Steps 1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -154,10 +154,10 @@ this.FeatureBackground();
                         "feature",
                         "scenario"});
             table1.AddRow(new string[] {
-                        "Shared Feature",
+                        "[Shared] Feature!",
                         "Shared Steps 1"});
             table1.AddRow(new string[] {
-                        "Shared Feature",
+                        "[Shared] Feature!",
                         "Shared Steps 2"});
 #line 29
  testRunner.Given("I execute the steps of:", ((string)(null)), table1, "Given ");
