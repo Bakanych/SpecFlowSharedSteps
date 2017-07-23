@@ -8,7 +8,6 @@ using TechTalk.SpecFlow;
 
 namespace SpecFlowSharedSteps.Tests
 {
-    public enum TestOutcome { passed, failed }
     public enum ContextType { feature, scenario }
 
 
