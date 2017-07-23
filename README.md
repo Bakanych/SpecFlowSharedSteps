@@ -1,5 +1,5 @@
 # SpecFlow Shared Steps
-[![Build status](https://ci.appveyor.com/api/projects/status/g18m571fd85vtiys?svg=true)](https://ci.appveyor.com/project/Bakanych/specflowsharedsteps) [![NuGet Status](http://img.shields.io/nuget/v/specflowsharedsteps.svg?style=flat)](https://www.nuget.org/packages/specflowsharedsteps/)
+[![Build status](https://ci.appveyor.com/api/projects/status/g18m571fd85vtiys?svg=true)](https://ci.appveyor.com/project/Bakanych/specflowsharedsteps) [![NuGet Status](http://img.shields.io/nuget/v/specflow.sharedsteps.svg?style=flat)](https://www.nuget.org/packages/specflow.sharedsteps/)
 
 Assume you have some set of steps you wanna share between your specflow scenarios.
 
