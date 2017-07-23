@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SpecFlow.SharedSteps")]
+[assembly: AssemblyTitle("SpecFlow Shared Steps")]
 [assembly: AssemblyDescription("This package contains SpecFlow steps definitions which allow you to reuse scenario steps")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Alexander Bakanov")]
-[assembly: AssemblyProduct("SpecFlow.SharedSteps")]
+[assembly: AssemblyProduct("SpecFlow Shared Steps")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
