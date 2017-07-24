@@ -10,6 +10,9 @@ Given I execute the steps of 'My Feature'.'Some Scenario'
 ```
 or
 ```gherkin
+Given I execute background steps of Some Feature
+
+# for quote lovers:
 Given I execute background steps of 'Some Feature'
 ```
 or even
