@@ -61,94 +61,94 @@ namespace SpecFlowSharedSteps.Tests.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 2
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Should execute scenario shared steps", SourceLine=3)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should execute scenario shared steps", SourceLine=2)]
         public virtual void ShouldExecuteScenarioSharedSteps()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should execute scenario shared steps", ((string[])(null)));
-#line 4
+#line 3
 this.ScenarioSetup(scenarioInfo);
-#line 2
-this.FeatureBackground();
-#line 5
+#line 4
  testRunner.Given("Save 1 to scenario context master1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 7
+#line 6
  testRunner.Given("I execute the steps of \'[Shared] Feature!\'.\'Shared Steps 1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
+#line 7
  testRunner.And("I execute the steps of \'[Shared] Feature!\'.\'Shared Steps 2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
+#line 9
  testRunner.Then("Read master1 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 11
+#line 10
  testRunner.And("Read a1 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
+#line 11
  testRunner.And("Read a2 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should execute feature background shared steps", SourceLine=14)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should execute feature background shared steps", SourceLine=12)]
         public virtual void ShouldExecuteFeatureBackgroundSharedSteps()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should execute feature background shared steps", ((string[])(null)));
-#line 15
+#line 13
 this.ScenarioSetup(scenarioInfo);
-#line 2
-this.FeatureBackground();
-#line 16
- testRunner.Given("I execute background steps of \'Shared Feature\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 14
+ testRunner.Given("I execute background steps of Shared Background", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 15
+ testRunner.Then("Read background from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should execute both background and shared scenario steps", SourceLine=17)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should execute feature background shared steps (quotes)", SourceLine=16)]
+        public virtual void ShouldExecuteFeatureBackgroundSharedStepsQuotes()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should execute feature background shared steps (quotes)", ((string[])(null)));
+#line 17
+this.ScenarioSetup(scenarioInfo);
+#line 18
+ testRunner.Given("I execute background steps of \'\'Shared\' \'Background\'\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+ testRunner.Then("Read background from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Should execute both background and shared scenario steps", SourceLine=20)]
         public virtual void ShouldExecuteBothBackgroundAndSharedScenarioSteps()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should execute both background and shared scenario steps", ((string[])(null)));
-#line 18
+#line 21
 this.ScenarioSetup(scenarioInfo);
-#line 2
-this.FeatureBackground();
-#line 19
+#line 22
  testRunner.Given("I execute background steps of \'[Shared] Feature!\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 20
+#line 23
  testRunner.And("I execute the steps of \'[Shared] Feature!\'.\'Shared Steps 1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should execute scenario hierarchy", SourceLine=21)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should execute scenario hierarchy", SourceLine=24)]
         public virtual void ShouldExecuteScenarioHierarchy()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should execute scenario hierarchy", ((string[])(null)));
-#line 22
-this.ScenarioSetup(scenarioInfo);
-#line 2
-this.FeatureBackground();
-#line 23
- testRunner.Given("I execute the steps of \'Master\'.\'Should execute scenario shared steps\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 24
- testRunner.Then("Read master1 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25
- testRunner.And("Read a1 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 26
+ testRunner.Given("I execute the steps of \'Master\'.\'Should execute scenario shared steps\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 27
+ testRunner.Then("Read master1 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 28
+ testRunner.And("Read a1 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
  testRunner.And("Read a2 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should execute shared steps from the table", SourceLine=27)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should execute shared steps from the table", SourceLine=30)]
         public virtual void ShouldExecuteSharedStepsFromTheTable()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should execute shared steps from the table", ((string[])(null)));
-#line 28
+#line 31
 this.ScenarioSetup(scenarioInfo);
-#line 2
-this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "feature",
@@ -159,7 +159,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "[Shared] Feature!",
                         "Shared Steps 2"});
-#line 29
+#line 32
  testRunner.Given("I execute the steps of:", ((string)(null)), table1, "Given ");
 #line hidden
             this.ScenarioCleanup();

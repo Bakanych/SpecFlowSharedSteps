@@ -1,5 +1,4 @@
 ﻿Feature: Master
-Background:
 
 Scenario: Should execute scenario shared steps
 	Given Save 1 to scenario context master1
@@ -11,9 +10,13 @@ Scenario: Should execute scenario shared steps
 	And Read a1 from scenario context
 	And Read a2 from scenario context
 
-
 Scenario: Should execute feature background shared steps
-	Given I execute background steps of 'Shared Feature'
+	Given I execute background steps of Shared Background
+	Then Read background from scenario context
+
+Scenario: Should execute feature background shared steps (quotes)
+	Given I execute background steps of ''Shared' 'Background''
+	Then Read background from scenario context
 
 Scenario: Should execute both background and shared scenario steps
 	Given I execute background steps of '[Shared] Feature!'

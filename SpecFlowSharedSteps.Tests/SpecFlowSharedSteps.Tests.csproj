@@ -70,6 +70,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MasterFeature.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Shared Background.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Shared Background.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\SharedFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,6 +93,10 @@
     <None Include="Features\MasterFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MasterFeature.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Shared Background.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Shared Background.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\SharedFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

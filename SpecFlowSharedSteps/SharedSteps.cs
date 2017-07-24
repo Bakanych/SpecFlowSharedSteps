@@ -40,6 +40,7 @@ namespace SpecFlowSharedSteps
         
 
         [StepDefinition(@"I execute background steps of '(.*)'")]
+        [StepDefinition(@"I execute background steps of (.*)")]
         public void ExecuteBackgroundSteps(string feature)
         {
             ExecuteScenarioSteps(feature, "FeatureBackground");
