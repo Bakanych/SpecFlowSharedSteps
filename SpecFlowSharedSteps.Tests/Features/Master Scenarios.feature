@@ -19,10 +19,11 @@ Scenario: Should execute feature background shared steps (quotes)
 	Then Read background from scenario context
 
 Scenario: Should execute both background and shared scenario steps
-	Given I execute background steps of '[Shared] Feature!'
+	Given I execute background steps of Shared Background
 	And I execute the steps of '[Shared] Feature!'.'Shared Steps 1'
 
-Scenario: Should execute scenario hierarchy
+@stack @maxDepth:2
+Scenario: Should execute scenario hierarchy with maximum depth level allowed
 	Given I execute the steps of 'Master'.'Should execute scenario shared steps'
 	Then Read master1 from scenario context
 	And Read a1 from scenario context
@@ -33,5 +34,3 @@ Scenario: Should execute shared steps from the table
 		| feature           | scenario       |
 		| [Shared] Feature! | Shared Steps 1 |
 		| [Shared] Feature! | Shared Steps 2 |
-
-

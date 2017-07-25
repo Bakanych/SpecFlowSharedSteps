@@ -8,6 +8,12 @@ using TechTalk.SpecFlow.Tracing;
 
 namespace SpecFlowSharedSteps
 {
+    public class SharedStepsInvocation
+    {
+        public int Max { get; set; } = 10;
+        public int Index { get; set; } = 1;
+    }
+
     public class TestRunnerInterceptor : IInterceptor
     {
         public void Intercept(IInvocation invocation)
@@ -37,7 +43,7 @@ namespace SpecFlowSharedSteps
 
             this.testRunner = testRunner;
         }
-        
+
 
         [StepDefinition(@"I execute background steps of '(.*)'")]
         [StepDefinition(@"I execute background steps of (.*)")]
@@ -87,11 +93,39 @@ namespace SpecFlowSharedSteps
             // Invoke scenario method of feature proxy class
             try
             {
+                BeforeInvoke(testRunner.FeatureContext);
                 scenarioMethod.Invoke(featureProxy, null);
             }
             catch (Exception ex)
             {
                 throw ex.InnerException ?? ex;
+            }
+            finally
+            {
+                AfterInvoke(testRunner.FeatureContext);
+            }
+        }
+
+        private void BeforeInvoke(FeatureContext context)
+        {
+            if (context.TryGetValue(out SharedStepsInvocation invocationContext))
+            {
+                if (invocationContext.Index++ >= invocationContext.Max)
+                    throw new InsufficientExecutionStackException(
+                        $"Shared steps execution exceeded maximum depth level of {invocationContext.Max}");
+
+                context.Set(invocationContext);
+            }
+            else
+                context.Set(new SharedStepsInvocation());
+        }
+
+        private void AfterInvoke(FeatureContext context)
+        {
+            if (context.TryGetValue(out SharedStepsInvocation invocationContext))
+            {
+                invocationContext.Index--;
+                context.Set(invocationContext);
             }
         }
 

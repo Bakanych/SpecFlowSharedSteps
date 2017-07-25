@@ -23,19 +23,18 @@ namespace SpecFlowSharedSteps.Tests
 
         }
 
-        [BeforeScenario]
-        public void BeforeScenario()
+        [BeforeScenario(tags: "stack")]
+        public void SetInvocationStack()
         {
-        }
+            var tagPrefix = "maxDepth:";
+            var depthTag = scenarioContext.ScenarioInfo.Tags.First(tag => tag.StartsWith(tagPrefix));
 
-        [AfterScenario]
-        public void AfterScenario()
-        {
-        }
-
-        [StepDefinition(@"'(.*)'")]
-        public void Step(string message)
-        {
+            if (depthTag != null)
+                featureContext.Set(new SharedStepsInvocation()
+                {
+                    Index = 0,
+                    Max = int.Parse(depthTag.Replace(tagPrefix, string.Empty))
+                });
         }
 
         [StepDefinition(@"Save (.*) to (.*) context (.*)")]

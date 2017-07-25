@@ -18,13 +18,13 @@ namespace SpecFlowSharedSteps.Tests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [TechTalk.SpecRun.FeatureAttribute("[Shared] Feature!", new string[] {
-            "testdata"}, SourceFile="Features\\SharedFeature.feature", SourceLine=1)]
+            "testdata"}, SourceFile="Features\\Shared Steps.feature", SourceLine=1)]
     public partial class SharedFeatureFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "SharedFeature.feature"
+#line 1 "Shared Steps.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]

@@ -17,13 +17,13 @@ namespace SpecFlowSharedSteps.Tests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Master", SourceFile="Features\\MasterFeature.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("Master", SourceFile="Features\\Master Scenarios.feature", SourceLine=0)]
     public partial class MasterFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "MasterFeature.feature"
+#line 1 "Master Scenarios.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
@@ -118,36 +118,40 @@ this.ScenarioSetup(scenarioInfo);
 #line 21
 this.ScenarioSetup(scenarioInfo);
 #line 22
- testRunner.Given("I execute background steps of \'[Shared] Feature!\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I execute background steps of Shared Background", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 23
  testRunner.And("I execute the steps of \'[Shared] Feature!\'.\'Shared Steps 1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should execute scenario hierarchy", SourceLine=24)]
-        public virtual void ShouldExecuteScenarioHierarchy()
+        [TechTalk.SpecRun.ScenarioAttribute("Should execute scenario hierarchy with maximum depth level allowed", new string[] {
+                "stack",
+                "maxDepth:2"}, SourceLine=25)]
+        public virtual void ShouldExecuteScenarioHierarchyWithMaximumDepthLevelAllowed()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should execute scenario hierarchy", ((string[])(null)));
-#line 25
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should execute scenario hierarchy with maximum depth level allowed", new string[] {
+                        "stack",
+                        "maxDepth:2"});
 #line 26
- testRunner.Given("I execute the steps of \'Master\'.\'Should execute scenario shared steps\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 27
- testRunner.Then("Read master1 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("I execute the steps of \'Master\'.\'Should execute scenario shared steps\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 28
- testRunner.And("Read a1 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Read master1 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
+ testRunner.And("Read a1 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
  testRunner.And("Read a2 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Should execute shared steps from the table", SourceLine=30)]
+        [TechTalk.SpecRun.ScenarioAttribute("Should execute shared steps from the table", SourceLine=31)]
         public virtual void ShouldExecuteSharedStepsFromTheTable()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should execute shared steps from the table", ((string[])(null)));
-#line 31
+#line 32
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -159,7 +163,7 @@ this.ScenarioSetup(scenarioInfo);
             table1.AddRow(new string[] {
                         "[Shared] Feature!",
                         "Shared Steps 2"});
-#line 32
+#line 33
  testRunner.Given("I execute the steps of:", ((string)(null)), table1, "Given ");
 #line hidden
             this.ScenarioCleanup();

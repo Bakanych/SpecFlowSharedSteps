@@ -65,20 +65,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\MasterFeature.feature.cs">
+    <Compile Include="Features\Master Scenarios.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MasterFeature.feature</DependentUpon>
+      <DependentUpon>Master Scenarios.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Shared Background.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Shared Background.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\SharedFeature.feature.cs">
+    <Compile Include="Features\Shared Steps.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SharedFeature.feature</DependentUpon>
+      <DependentUpon>Shared Steps.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps.cs" />
@@ -90,17 +90,17 @@
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Features\MasterFeature.feature">
+    <None Include="Features\Master Scenarios.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MasterFeature.feature.cs</LastGenOutput>
+      <LastGenOutput>Master Scenarios.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Shared Background.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Shared Background.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\SharedFeature.feature">
+    <None Include="Features\Shared Steps.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SharedFeature.feature.cs</LastGenOutput>
+      <LastGenOutput>Shared Steps.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
