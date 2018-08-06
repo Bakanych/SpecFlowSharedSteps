@@ -15,10 +15,21 @@ namespace SpecFlowSharedSteps
 
     public class TestRunnerInterceptor : IInterceptor
     {
+        // from https://github.com/techtalk/SpecFlow/blob/master/TechTalk.SpecFlow.Generator/UnitTestFeatureGenerator.cs
+
+        // before v2.4
+        private const string SCENARIO_INITIALIZE_NAME = "ScenarioSetup";
+        private const string TEST_CLEANUP_NAME = "ScenarioTearDown";
+
+        // from v2.4
+        private const string SCENARIO_START_NAME = "ScenarioStart";
+
         public void Intercept(IInvocation invocation)
         {
-            if (invocation.Method.Name == "ScenarioSetup" ||
-                invocation.Method.Name == "ScenarioTearDown"
+            // skip scenario initiazlization and cleanup because it will be invocated in parent scenario
+            if (invocation.Method.Name == SCENARIO_INITIALIZE_NAME ||
+                invocation.Method.Name == SCENARIO_START_NAME ||
+                invocation.Method.Name == TEST_CLEANUP_NAME
                 )
                 return;
             else
