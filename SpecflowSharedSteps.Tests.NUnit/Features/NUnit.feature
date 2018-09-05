@@ -24,7 +24,7 @@ Scenario: Should execute both background and shared scenario steps
 
 @stack @maxDepth:2
 Scenario: Should execute scenario hierarchy with maximum depth level allowed
-	Given I execute the steps of 'Master'.'Should execute scenario shared steps'
+	Given I execute the steps of 'NUnit'.'Should execute scenario shared steps'
 	Then Read master1 from scenario context
 	And Read a1 from scenario context
 	And Read a2 from scenario context
@@ -35,3 +35,6 @@ Scenario: Should execute shared steps from the table
 		| [Shared] Feature! | Shared Steps 1 |
 		| [Shared] Feature! | Shared Steps 2 |
 
+Scenario: Shared step should access parent context
+	Given Save value to scenario context parent1
+	Given I execute the steps of '[Shared] Feature!'.'Access parent context'

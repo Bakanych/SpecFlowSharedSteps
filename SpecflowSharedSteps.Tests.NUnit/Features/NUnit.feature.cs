@@ -143,7 +143,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 26
 this.ScenarioSetup(scenarioInfo);
 #line 27
- testRunner.Given("I execute the steps of \'Master\'.\'Should execute scenario shared steps\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I execute the steps of \'NUnit\'.\'Should execute scenario shared steps\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 28
  testRunner.Then("Read master1 from scenario context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
@@ -173,6 +173,21 @@ this.ScenarioSetup(scenarioInfo);
                         "Shared Steps 2"});
 #line 33
  testRunner.Given("I execute the steps of:", ((string)(null)), table1, "Given ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Shared step should access parent context")]
+        public virtual void SharedStepShouldAccessParentContext()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Shared step should access parent context", ((string[])(null)));
+#line 38
+this.ScenarioSetup(scenarioInfo);
+#line 39
+ testRunner.Given("Save value to scenario context parent1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 40
+ testRunner.Given("I execute the steps of \'[Shared] Feature!\'.\'Access parent context\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             this.ScenarioCleanup();
         }

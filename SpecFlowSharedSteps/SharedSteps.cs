@@ -1,6 +1,5 @@
 ﻿using Castle.DynamicProxy;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using TechTalk.SpecFlow;
@@ -16,10 +15,21 @@ namespace SpecFlowSharedSteps
 
     public class TestRunnerInterceptor : IInterceptor
     {
+        // from https://github.com/techtalk/SpecFlow/blob/master/TechTalk.SpecFlow.Generator/UnitTestFeatureGenerator.cs
+
+        // before v2.4
+        private const string SCENARIO_INITIALIZE_NAME = "ScenarioSetup";
+        private const string TEST_CLEANUP_NAME = "ScenarioTearDown";
+
+        // from v2.4
+        private const string SCENARIO_START_NAME = "ScenarioStart";
+
         public void Intercept(IInvocation invocation)
         {
-            if (invocation.Method.Name == "ScenarioSetup" ||
-                invocation.Method.Name == "ScenarioTearDown"
+            // skip scenario initiazlization and cleanup because it will be invocated in parent scenario
+            if (invocation.Method.Name == SCENARIO_INITIALIZE_NAME ||
+                invocation.Method.Name == SCENARIO_START_NAME ||
+                invocation.Method.Name == TEST_CLEANUP_NAME
                 )
                 return;
             else
@@ -30,17 +40,13 @@ namespace SpecFlowSharedSteps
     [Binding]
     public class SharedSteps
     {
-        IEnumerable<Assembly> stepAssemblies;
         ITestRunner testRunner;
+        ITestRunnerManager testRunnerManager;
         ProxyGenerator pg = new ProxyGenerator();
 
         public SharedSteps(ITestRunner testRunner, ITestRunnerManager testRunnerManager)
         {
-            // NOTE: 2.1 compatible hack.
-            // In SpecFlow 2.2 there are ITestRunnerManager.TestAssembly and .BindingAssemblies.
-            var method = typeof(TestRunnerManager).GetMethod("GetBindingAssemblies", BindingFlags.Instance | BindingFlags.NonPublic);
-            stepAssemblies = method.Invoke(testRunnerManager, null) as IEnumerable<Assembly>;
-
+            this.testRunnerManager = testRunnerManager;
             this.testRunner = testRunner;
         }
 
@@ -68,7 +74,7 @@ namespace SpecFlowSharedSteps
         public void ExecuteScenarioSteps(string feature, string scenario)
         {
             // Get type of shared feature class
-            var featureType = stepAssemblies.SelectMany(x => x.GetTypes()
+            var featureType = testRunnerManager.BindingAssemblies.SelectMany(x => x.GetTypes()
                         .Where(type => type.Name.ToLower() == $"{ConvertToIdentifier(feature)}feature"))
                         .FirstOrDefault();
 

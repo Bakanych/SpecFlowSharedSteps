@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowSharedSteps.Tests
@@ -21,6 +16,13 @@ namespace SpecFlowSharedSteps.Tests
             this.featureContext = featureContext;
             this.scenarioContext = scenarioContext;
 
+        }
+
+        [BeforeScenario]
+        [AfterScenario]
+        public void ClearContext()
+        {
+            scenarioContext.Clear();
         }
 
         [BeforeScenario(tags: "stack")]
