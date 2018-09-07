@@ -18,18 +18,23 @@ namespace SpecFlowSharedSteps
         // from https://github.com/techtalk/SpecFlow/blob/master/TechTalk.SpecFlow.Generator/UnitTestFeatureGenerator.cs
 
         // before v2.4
-        private const string SCENARIO_INITIALIZE_NAME = "ScenarioSetup";
+        private const string SCENARIO_SETUP_NAME = "ScenarioSetup";
         private const string TEST_CLEANUP_NAME = "ScenarioTearDown";
 
         // from v2.4
         private const string SCENARIO_START_NAME = "ScenarioStart";
+        private const string SCENARIO_INITIALIZE_NAME = "ScenarioInitialize";
+        private const string SCENARIO_CLEANUP_NAME = "ScenarioCleanup";
+
 
         public void Intercept(IInvocation invocation)
         {
             // skip scenario initiazlization and cleanup because it will be invocated in parent scenario
-            if (invocation.Method.Name == SCENARIO_INITIALIZE_NAME ||
+            if (invocation.Method.Name == SCENARIO_SETUP_NAME ||
+                invocation.Method.Name == TEST_CLEANUP_NAME ||
                 invocation.Method.Name == SCENARIO_START_NAME ||
-                invocation.Method.Name == TEST_CLEANUP_NAME
+                invocation.Method.Name == SCENARIO_INITIALIZE_NAME ||
+                invocation.Method.Name == SCENARIO_CLEANUP_NAME
                 )
                 return;
             else
@@ -40,9 +45,9 @@ namespace SpecFlowSharedSteps
     [Binding]
     public class SharedSteps
     {
-        ITestRunner testRunner;
-        ITestRunnerManager testRunnerManager;
-        ProxyGenerator pg = new ProxyGenerator();
+        private ITestRunner testRunner;
+        private ITestRunnerManager testRunnerManager;
+        private ProxyGenerator pg = new ProxyGenerator();
 
         public SharedSteps(ITestRunner testRunner, ITestRunnerManager testRunnerManager)
         {
