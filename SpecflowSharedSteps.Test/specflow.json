@@ -1,0 +1,5 @@
+{
+  "stepAssemblies": [
+    { "assembly": "SpecFlowSharedSteps.Steps" },    { "assembly": "SpecFlowSharedSteps" }
+  ]
+}

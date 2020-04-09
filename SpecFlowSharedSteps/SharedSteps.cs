@@ -29,7 +29,7 @@ namespace SpecFlowSharedSteps
 
         public void Intercept(IInvocation invocation)
         {
-            // skip scenario initiazlization and cleanup because it will be invocated in parent scenario
+            // skip scenario initialization and cleanup because it will be invocated in parent scenario
             if (invocation.Method.Name == SCENARIO_SETUP_NAME ||
                 invocation.Method.Name == TEST_CLEANUP_NAME ||
                 invocation.Method.Name == SCENARIO_START_NAME ||
