@@ -50,3 +50,5 @@ See more [examples](https://github.com/Bakanych/SpecFlowSharedSteps/blob/master/
 
 Parent Feature and Scenario Context is used by shared steps. Context values created by shared steps are available in parent scenario.
 Be careful with context key duplication.
+
+
