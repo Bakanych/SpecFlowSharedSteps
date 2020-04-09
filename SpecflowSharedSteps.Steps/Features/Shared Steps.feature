@@ -1,4 +1,4 @@
-﻿@testdata @ignore
+﻿@testdata
 Feature: [Shared] Feature!
 Background: 
 

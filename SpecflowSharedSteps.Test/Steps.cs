@@ -9,8 +9,9 @@ namespace SpecFlowSharedSteps.Tests
     [Binding]
     public class Steps
     {
-        FeatureContext featureContext;
-        ScenarioContext scenarioContext;
+        
+        readonly FeatureContext featureContext;
+        readonly ScenarioContext scenarioContext;
         public Steps(FeatureContext featureContext, ScenarioContext scenarioContext)
         {
             this.featureContext = featureContext;
