@@ -1,4 +1,4 @@
-# SpecFlow Shared Steps <img src="https://raw.githubusercontent.com/Bakanych/SpecFlowSharedSteps/master/shared-steps-nuget-icon.png" width="40"/>
+# SpecFlow Shared Steps <img src="https://raw.githubusercontent.com/Bakanych/SpecFlowSharedSteps/master/SpecFlowSharedSteps/package-icon.png" width="40"/>
 
 [![Build status](https://ci.appveyor.com/api/projects/status/g18m571fd85vtiys?svg=true)](https://ci.appveyor.com/project/Bakanych/specflowsharedsteps) [![NuGet version](https://badge.fury.io/nu/specflow.sharedsteps.svg)](https://badge.fury.io/nu/specflow.sharedsteps)
 
