@@ -12,7 +12,12 @@
     <PackageIcon>package-icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/Bakanych/SpecFlowSharedSteps</RepositoryUrl>
     <PackageTags>specflow bdd</PackageTags>
-    <Version>3.0.0</Version>
+    <Version>1.0.0-debug</Version>
+    <Title>SpecFlow Shared Steps</Title>
+    <LangVersion>default</LangVersion>
+    <PackageVersion>1.0.0-debug</PackageVersion>
+    <AssemblyVersion></AssemblyVersion>
+    <FileVersion></FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.4.0" />
