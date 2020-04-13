@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFrameworks>net451;netstandard2.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Product>SpecFlow Shared Steps</Product>
     <Description>This package contains SpecFlow steps definitions which allow you to reuse scenario steps</Description>
@@ -16,7 +16,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.4.0" />
-    <PackageReference Include="SpecFlow" Version="3.1.95" />
+    <PackageReference Include="SpecFlow" Version="3.1.*" />
   </ItemGroup>
   <ItemGroup>
     <None Include="package-icon.png" Pack="true" PackagePath="\" />

@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <LangVersion>default</LangVersion>
 
 
   </PropertyGroup>
@@ -11,9 +13,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
-    <PackageReference Include="SpecFlow" Version="3.1.95" />
-    <PackageReference Include="SpecFlow.NUnit" Version="3.1.95" />
-    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.1.95" />
+    <PackageReference Include="SpecFlow" Version="3.1.97" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.1.97" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.1.97" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,9 +23,5 @@
     <Content Include="Features\Shared Steps.feature" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SpecFlowSharedSteps\SpecFlowSharedSteps.csproj" />
-  </ItemGroup>
 
-  
 </Project>
